@@ -1,0 +1,23 @@
+@{
+    ViewBag.Title = "TIKI - Mua hàng Online giá tốt, chất lượng, ship nhanh";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="justify-content-center">DANH SÁCH SẢN PHẨM</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Products ID</td>
+            <td>Products Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Products)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td><a href="/Home/Details/@item.Id">@item.Name</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
